@@ -7,9 +7,11 @@ import {
 } from "react-router-dom";
 import Layout from './components/Layout/Layout';
 import Home from './components/Home/Home';
+import Orders from './components/Orders/Orders';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import AuthProviders from './providers/AuthProviders';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>
+      },
+      {
+        path: "/orders",
+        element: <PrivateRoute><Orders></Orders></PrivateRoute>
       }
     ]
   },
